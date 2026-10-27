@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RHYTHM AI - Techno Beat Maker</title>
+    <title>RHYTHM AI - Tekno Beat Yapımcısı</title>
     <style>
         :root {
             --bg-color: #0b0b0f;
@@ -244,8 +244,8 @@
     <!-- Ana Kontroller -->
     <div class="panel">
         <div class="transport-grid">
-            <button class="primary" id="playBtn">BAŞLAT (PLAY)</button>
-            <button id="tapBtn">TAP BPM</button>
+            <button class="primary" id="playBtn">BAŞLAT</button>
+            <button id="tapBtn">BPM TIKLA</button>
             <div class="bpm-control">
                 <button id="bpmMinus">-</button>
                 <span id="bpmDisplay" style="font-weight:bold; font-size:0.9rem;">130</span>
@@ -256,18 +256,18 @@
 
     <!-- Canlı Drum Pad'ler -->
     <div class="panel">
-        <div class="panel-title">Canlı Padler</div>
+        <div class="panel-title">Canlı Pad'ler</div>
         <div class="pads-grid">
-            <button class="pad" data-sound="kick"><span>KICK</span>909 Sub</button>
+            <button class="pad" data-sound="kick"><span>BAS</span>909 Sub</button>
             <button class="pad" data-sound="bass"><span>BASS</span>Acid 303</button>
-            <button class="pad" data-sound="hihat"><span>HAT</span>Closed</button>
-            <button class="pad" data-sound="clap"><span>CLAP</span>Industrial</button>
+            <button class="pad" data-sound="hihat"><span>HAT</span>Kapalı</button>
+            <button class="pad" data-sound="clap"><span>CLAP</span>Endüstriyel</button>
         </div>
     </div>
 
     <!-- 16 Adımlı Tekno Step Sequencer -->
     <div class="panel" style="overflow-x: auto;">
-        <div class="panel-title"><span>16 Adımlı Sequencer</span></div>
+        <div class="panel-title"><span>16 Adımlı Sekansör</span></div>
         <div style="min-width: 420px;" id="sequencerContainer">
             <!-- JavaScript ile doldurulacak -->
         </div>
@@ -277,9 +277,9 @@
     <div class="panel">
         <div class="panel-title">AI Ritim Tarzları</div>
         <div class="ai-grid">
-            <button onclick="window.rhythmAI.generateAI('peak')">Peak Time</button>
+            <button onclick="window.rhythmAI.generateAI('peak')">Tepe Zamanı</button>
             <button onclick="window.rhythmAI.generateAI('acid')">Acid 303</button>
-            <button onclick="window.rhythmAI.generateAI('minimal')">Minimal Groove</button>
+            <button onclick="window.rhythmAI.generateAI('minimal')">Minimal Vuruş</button>
         </div>
     </div>
 
@@ -287,8 +287,8 @@
     <div class="panel">
         <div class="panel-title">Performans Efektleri</div>
         <div class="fx-grid">
-            <button id="buildBtn" style="background:#332244; color:#cc88ff;">BUILD-UP (YÜKSELİŞ)</button>
-            <button class="danger" id="dropBtn">DROP THE BASS!</button>
+            <button id="buildBtn" style="background:#332244; color:#cc88ff;">YÜKSELİŞ</button>
+            <button class="danger" id="dropBtn">BASI DÜŞÜR!</button>
         </div>
     </div>
 
@@ -517,11 +517,11 @@
                 const btn = document.getElementById('playBtn');
                 
                 if (this.isPlaying) {
-                    btn.innerText = "DURDUR (STOP)";
+                    btn.innerText = "DURDUR";
                     btn.style.background = "var(--danger)";
                     this.startInterval();
                 } else {
-                    btn.innerText = "BAŞLAT (PLAY)";
+                    btn.innerText = "BAŞLAT";
                     btn.style.background = "var(--accent)";
                     clearInterval(this.timerID);
                     this.currentStep = 0;
@@ -614,7 +614,7 @@
             saveProject() {
                 localStorage.setItem('rhythm_ai_tracks', JSON.stringify(this.tracks));
                 localStorage.setItem('rhythm_ai_bpm', this.bpm);
-                alert('Proje telefon hafızasına kaydedildi!');
+                alert('Proje cihaz hafızasına kaydedildi!');
             }
 
             loadProject() {
